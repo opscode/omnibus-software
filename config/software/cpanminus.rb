@@ -15,7 +15,7 @@
 #
 
 name "cpanminus"
-default_version "1.7004"
+default_version "1.9011"
 
 license "Artistic-2.0"
 license_file "http://dev.perl.org/licenses/artistic.html"
@@ -23,13 +23,10 @@ skip_transitive_dependency_licensing true
 
 dependency "perl"
 
-version "1.7040" do
-  source md5: "4fabebffe22eaaf584b345b082a8a9c1"
-end
+# version_list: url=https://github.com/miyagawa/cpanminus/releases filter=*.tar.gz
 
-version "1.7004" do
-  source md5: "02fe90392f33a12979e188ea110dae67"
-end
+version("1.9011") { source sha256: "d708ef86a23b6bc4f3f961513e1eb3827e6e75f390849b1d5bc777d79bfb4a74" }
+version("1.7040") { source sha256: "48a747c040689445f7db0edd169da0abd709a37cfece3ceecff0816c09beab0e" }
 
 source url: "https://github.com/miyagawa/cpanminus/archive/#{version}.tar.gz"
 
@@ -47,4 +44,3 @@ build do
 
   command "cpanm Module::Build", env: env
 end
-
